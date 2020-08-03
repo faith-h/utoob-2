@@ -1,0 +1,13 @@
+{
+  "name": "you-tube",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/faith-h/utoob-2.git",
+  "author": "Faith <faithhafen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
+    }
+}

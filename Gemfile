@@ -25,6 +25,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # User authentication
 gem 'devise_token_auth'
 
+# Fake data for display
+  gem 'faker'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
@@ -32,7 +35,7 @@ group :development, :test do
   # 'binding.pry' for debugging
   gem 'pry', platforms: [:mri, :mingw, :x64_mingw]
   # Fake data for testing
-  gem "faker", :git => "https://github.com/stympy/faker.git", :branch => "master"
+  gem 'faker'
 end
 
 group :development do
