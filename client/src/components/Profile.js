@@ -59,9 +59,9 @@ class Profile extends React.Component {
     return (
       <>
         {open ?
-          <div class="modal">
-            <div class="modal-content">
-              <span class="close" onClick={() => this.showModal()}>&times;</span>
+          <div class='modal'>
+            <div class='modal-content'>
+              <span class='close' onClick={() => this.showModal()}>&times;</span>
               <UserForm id={user.id} update={this.update} />
             </div>
 

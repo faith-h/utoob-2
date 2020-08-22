@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import Iframe from 'react-iframe'
-import CommentForm from './CommentForm'
 import { Link } from 'react-router-dom'
 import { AuthConsumer } from '../providers/AuthProvider'
+import Iframe from 'react-iframe'
+import CommentForm from './CommentForm'
 import VideoForm from './VideoForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
@@ -135,20 +135,17 @@ class Video extends React.Component {
               </>
               :
               null
-            // TODO: add subscribe functionality
-            // <button class='button' style={{ float: 'right' }}> Subscribe </button>
           }
         </>
       )
     } else {
       return (
-        <>
-          <button class='button' style={{ float: 'right' }} onClick={() => this.props.history.push("/login")}> Subscribe </button>
-        </>
+        // TODO: add subscribe functionality
+        // <button class='button' style={{ float: 'right' }} onClick={() => this.props.history.push("/login")}> Subscribe </button>
+        null
       )
     }
   }
-
 
   render() {
     const { video, open, video_user } = this.state
@@ -169,7 +166,7 @@ class Video extends React.Component {
             {open ?
               <div class="modal">
                 <div class="modal-content">
-                  <span class="close" onClick={() => this.showModal()} > &times; </span>
+                  <div class="close" onClick={() => this.showModal()} > &times; </div>
                   <VideoForm id={video.id} update={this.update} />
                 </div>
               </div>

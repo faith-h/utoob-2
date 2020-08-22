@@ -57,21 +57,37 @@ class CommentForm extends React.Component {
                   placeholder='Add a public comment'
                   onChange={this.handleChange}
                 />
-                <button class='button' type='submit' style={{ float: 'right', background: 'white', color: 'grey', marginTop: '0.25rem' }}>
+                <button
+                  class='button'
+                  type='submit'
+                  style={{ float: 'right', background: 'white', color: 'grey', marginTop: '0.25rem' }}
+                >
                   <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
               </form>
             </>
             :
             <>
-              <img class='user-img' alt='user icon' src={require('../images/user.png')} />
-              <p style={{ color: 'grey', float: 'left', marginTop: '0.5rem' }}> Sign in to add a public comment. </p>
-              <button class='button' style={{ float: 'right', background: 'white', color: 'grey' }}>
-                <FontAwesomeIcon icon={faPaperPlane} />
-              </button>
+              <img class='user-img' alt='User icon' src={require('../images/user.png')} />
+              <form>
+                <input
+                  class='comment-input'
+                  type='text'
+                  name='body'
+                  value={body}
+                  placeholder='Add a public comment'
+                  onChange={this.handleChange}
+                />
+                <button
+                  class='button'
+                  onClick={() => this.props.history.push("/login")}
+                  style={{ float: 'right', background: 'white', color: 'grey', marginTop: '0.25rem' }}
+                >
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                </button>
+              </form>
             </>
           }
-
         </div>
       </>
     )

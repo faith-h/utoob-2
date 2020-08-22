@@ -12,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* login/register styling */
+/* Login/Register styling */
 
 .login-box, .register-box {
   width: 30rem;
@@ -108,6 +108,9 @@ code {
 
 .logo {
   height: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 a:first-child {
@@ -121,6 +124,8 @@ a:first-child {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 4rem;
+  transition: height 300ms ease;
 }
 
 .topnav a, .nav-text {
@@ -195,6 +200,9 @@ a:first-child {
 @media screen and (max-width: 600px) {
   .topnavresponsive {
     background: white;
+    overflow: hidden;
+    transition: height 300ms ease;
+    height: 15rem;
   }
   .topnavresponsive a, .topnavresponsive .nav-text {
     float: none;
@@ -203,6 +211,7 @@ a:first-child {
     padding: 1rem;
   }
   .topnavresponsive .dropdown {
+    padding-top: 2rem;
     float: none;
   }
   .topnavresponsive .dropdown-content {
@@ -214,7 +223,7 @@ a:first-child {
   }
 }
 
-/* home page styling */
+/* Home styling */
 
 .home-container {
   padding-left: 10rem;
@@ -247,8 +256,7 @@ a:first-child {
 @media only screen and (max-width: 600px) {
   .home-container {
     padding: 0;
-    padding-left: 6rem;
-    align-items: center;
+    padding-left: 3rem;
   }
 }
 
@@ -316,11 +324,11 @@ a:first-child {
     width: 100%;
   }
   .right {
-    margin-left: 6rem;
+    margin-left: 3rem;
   }
 }
 
-/* modal styling */
+/* Modal styling */
 
 .modal {
   position: fixed;
@@ -332,11 +340,17 @@ a:first-child {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.modal-content {
+  position: relative;
+  top: 40%;
+  z-index: 4;
+}
+
 .close {
   color: #aaa;
   position: fixed;
-  top: 12rem;
-  left: 56rem;
+  top: 6rem;
+  right: 32rem;
   z-index: 5;
   font-size: 3rem;
   font-weight: bold;
@@ -344,12 +358,12 @@ a:first-child {
 
 @media only screen and (max-width: 600px) {
   .close {
-    top: 8rem;
-    left: 27rem;
+    top: 4rem;
+    right: 5rem;
   }
 }
 
-.close:hover, .close:focus {
+.close:hover {
   color: white;
   text-decoration: none;
   cursor: pointer;
