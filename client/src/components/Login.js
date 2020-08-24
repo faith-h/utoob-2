@@ -23,13 +23,11 @@ class Login extends React.Component {
       <>
         <div class='login-box'>
           <h1> Login </h1>
-
-          <form onSubmit={this.handleSubmit} >
+          <form onSubmit={this.handleSubmit}>
             <p> E-mail </p>
             <input
               class='login-input'
               required
-              autoFocus
               type='text'
               name='email'
               value={email}
@@ -57,7 +55,6 @@ class Login extends React.Component {
               Don't have an account? Register here.
             </p>
           </Link>
-          
         </div>
       </>
     )

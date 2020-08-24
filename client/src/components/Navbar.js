@@ -16,18 +16,18 @@ class Navbar extends React.Component {
   }
 
   dropdownItems = () => {
-    const { auth: { user, handleLogout, } } = this.props;
+    const { auth: { user, handleLogout } } = this.props
 
     if (user) {
       return (
         <>
-          <div class="dropdown">
-            <button class="dropbtn">
+          <div class='dropdown'>
+            <button class='dropbtn'>
               <img class='nav-img' alt='user icon' src={user.image} />
             </button>
-            <div class="dropdown-content">
-              <a href="/profile"> Profile </a>
-              <span class='nav-text' style={{ cursor: 'pointer' }} onClick={() => handleLogout(this.props.history)}>
+            <div class='dropdown-content'>
+              <a href='/profile'> Profile </a>
+              <span class='nav-text' onClick={() => handleLogout(this.props.history)}>
                 Logout
               </span>
             </div>
@@ -37,15 +37,13 @@ class Navbar extends React.Component {
     } else {
       return (
         <>
-          <div class="dropdown">
-            <button class="dropbtn">
+          <div class='dropdown'>
+            <button class='dropbtn'>
               <img class='nav-img' alt='user icon' src={require('../images/user.png')} />
             </button>
-            <div class="dropdown-content">
+            <div class='dropdown-content'>
               <a href='/login'> Login </a>
-              <a href='/register'>
-                Register
-         </a>
+              <a href='/register'> Register </a>
             </div>
           </div>
         </>
@@ -54,13 +52,15 @@ class Navbar extends React.Component {
   }
 
   render() {
-    
+
     return (
       <>
-        <div class="topnav" id="topnav">
-          <a href='/'> <img class='logo' alt='logo' src={require('../images/logo.png')} /> </a>
+        <div class='topnav' id='topnav'>
+          <a href='/'>
+            <img class='logo' alt='logo' src={require('../images/logo.png')} />
+          </a>
           {this.dropdownItems()}
-          <a href="/new_video">
+          <a href='/new_video'>
             <button class='button'> Upload video </button>
           </a>
           <FontAwesomeIcon class='icon' icon={faBars} onClick={() => this.openBurger()} />
@@ -69,7 +69,6 @@ class Navbar extends React.Component {
     )
   }
 }
-
 
 export class ConnectedNavbar extends React.Component {
   render() {

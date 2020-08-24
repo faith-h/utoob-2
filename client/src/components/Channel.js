@@ -33,7 +33,7 @@ class Channel extends React.Component {
               <Link class='link' key={v.id} to={`/videos/${v.id}`}>
                 <p> {v.title} </p>
               </Link>
-              <Iframe src={v.trailer} />
+              <Iframe className='link-frame' src={v.trailer} />
             </div>
           </>
           :
@@ -45,12 +45,12 @@ class Channel extends React.Component {
 
   render() {
     const { user } = this.state
-    
+
     return (
       <>
         <div style={{ textAlign: 'center' }}>
 
-          <div class='section' style={{ display: 'inline-block' }}>
+          <div class='section'>
             <img alt='User avatar' class='user-img' style={{ height: '8rem', width: '8rem' }} src={user.image} />
             <p> {user.name} </p>
             <p> {user.email} </p>
@@ -58,7 +58,7 @@ class Channel extends React.Component {
 
           <div class='section'>
             <p style={{ fontSize: '1.5rem' }} > {user.name}'s Videos </p>
-            <div class='grid' style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+            <div class='grid'>
               {this.showVideos()}
             </div>
           </div>

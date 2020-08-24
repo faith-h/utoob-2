@@ -45,6 +45,7 @@ class Video extends React.Component {
     }
   }
 
+  // reload video data when clicking on another video
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       window.location.reload();
@@ -93,9 +94,6 @@ class Video extends React.Component {
           }
           <span> {c.user_name} </span>
           <p> {c.body} </p>
-
-
-
         </div>
       </>
     ))
@@ -153,6 +151,7 @@ class Video extends React.Component {
     return (
       <>
         <Iframe className='frame' src={video.trailer} />
+
         <div style={{ textAlign: 'center' }}>
           <div class='section' >
             <Link to={`/users/${video_user.id}`}>
@@ -166,7 +165,7 @@ class Video extends React.Component {
             {open ?
               <div class="modal">
                 <div class="modal-content">
-                  <div class="close" onClick={() => this.showModal()} > &times; </div>
+                  <div class="close" onClick={() => this.showModal()} >&times;</div>
                   <VideoForm id={video.id} update={this.update} />
                 </div>
               </div>

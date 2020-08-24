@@ -36,7 +36,7 @@ class Profile extends React.Component {
               <Link class='link' key={v.id} to={`/videos/${v.id}`}>
                 <p> {v.title} </p>
               </Link>
-              <Iframe src={v.trailer} />
+              <Iframe className='link-frame' src={v.trailer} />
             </div>
           </>
           :
@@ -55,7 +55,7 @@ class Profile extends React.Component {
 
   render() {
     const { user, open } = this.state
-    
+
     return (
       <>
         {open ?
@@ -69,8 +69,9 @@ class Profile extends React.Component {
           :
           null
         }
+
         <div style={{ textAlign: 'center' }}>
-          <div class='section' style={{ display: 'inline-block' }}>
+          <div class='section'>
             <button class='button' style={{ float: 'right' }} onClick={() => this.showModal()}>
               <FontAwesomeIcon icon={faEdit} />
             </button>
@@ -81,16 +82,10 @@ class Profile extends React.Component {
 
           <div class='section'>
             <p style={{ fontSize: '1.5rem' }} > My Videos </p>
-            <div class='grid' style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+            <div class='grid'>
               {this.showVideos()}
             </div>
           </div>
-          {/* TODO: add subscribe functionality */}
-          {/* <div class='section'>
-          <p style={{ fontSize: '1.5rem' }} > Subscriptions </p>
-          <div class='grid' style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-          </div>
-        </div> */}
         </div>
       </>
     )

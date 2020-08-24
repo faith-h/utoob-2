@@ -54,7 +54,6 @@ class VideoForm extends React.Component {
             <input
               class='login-input'
               required
-              autoFocus
               type='text'
               name='title'
               value={title}

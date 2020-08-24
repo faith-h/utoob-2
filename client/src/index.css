@@ -12,21 +12,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Contents
+  - Login/Register styling
+  - Navbar styling
+  - Home styling
+  - Video player styling
+  - Modal styling
+ */
+
 /* Login/Register styling */
 
 .login-box, .register-box {
   width: 30rem;
   height: 30rem;
   background: grey;
-  color: #fff;
+  color: white;
+  position: absolute;
   top: 50%;
   left: 50%;
-  position: absolute;
   transform: translate(-50%, -40%);
   box-sizing: border-box;
-  padding: 30px;
-  padding-top: 60px;
-  border-radius: 20px;
+  padding: 2rem;
+  padding-top: 3rem;
+  border-radius: 1.5rem;
 }
 
 .register-box {
@@ -59,7 +67,7 @@ code {
   width: 100%;
   height: 40px;
   background: var(--bg-primary);
-  color: #fff;
+  color: white;
   font-size: 1rem;
   border-radius: 20px;
 }
@@ -85,7 +93,14 @@ code {
   }
 }
 
-/* navbar styling */
+/* Navbar styling */
+
+.logo {
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 
 .nav-img {
   height: 2rem;
@@ -106,25 +121,14 @@ code {
   transition: 300ms ease;
 }
 
-.logo {
-  height: 2rem;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-
-a:first-child {
-  margin-right: auto;
-}
-
 .topnav {
+  width: 100vw;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   background: white;
   overflow: hidden;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 4rem;
   transition: height 300ms ease;
 }
 
@@ -136,9 +140,10 @@ a:first-child {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  cursor: pointer;
 }
 
-.topnav .icon {
+.icon {
   display: none;
 }
 
@@ -149,7 +154,7 @@ a:first-child {
 
 .dropdown .dropbtn {
   background: white;
-  font-size: 17px;
+  font-size: 1rem;
   border: none;
   outline: none;
   padding: 14px 16px;
@@ -179,6 +184,7 @@ a:first-child {
 
 .dropdown-content a:hover, .nav-text:hover {
   background: gainsboro;
+  transition: 300ms ease;
 }
 
 @media screen and (max-width: 600px) {
@@ -195,19 +201,14 @@ a:first-child {
     color: var(--bg-primary);
     cursor: pointer;
   }
-}
-
-@media screen and (max-width: 600px) {
   .topnavresponsive {
     background: white;
     overflow: hidden;
     transition: height 300ms ease;
-    height: 15rem;
+    height: 14rem;
   }
   .topnavresponsive a, .topnavresponsive .nav-text {
-    float: none;
     display: block;
-    text-align: left;
     padding: 1rem;
   }
   .topnavresponsive .dropdown {
@@ -218,21 +219,18 @@ a:first-child {
     position: relative;
     display: block;
   }
-  .topnavresponsive .dropdown .dropbtn {
-    display: none;
-  }
 }
 
 /* Home styling */
 
 .home-container {
-  padding-left: 10rem;
-  padding-right: 15rem;
+  padding-left: 5rem;
+  padding-right: 10rem;
 }
 
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -241,15 +239,15 @@ a:first-child {
   color: black;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 600px) {
   .link:first-child {
     grid-column: span 2 / auto;
     grid-row: span 2 / auto;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
   .grid-item {
     height: 100%;
-    width: 215%;
+    width: 100%;
   }
 }
 
@@ -260,7 +258,7 @@ a:first-child {
   }
 }
 
-/* video player styling */
+/* Video player styling */
 
 .link-frame, .grid-item {
   border: 0;
@@ -274,7 +272,7 @@ a:first-child {
 
 .section {
   background: white;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 1px 1px 1px 1px #eee;
   padding: 1rem;
   margin-top: 1rem;
@@ -287,9 +285,16 @@ a:first-child {
   height: 2rem;
   border-radius: 100%;
   float: left;
-  margin: 1.5rem;
-  margin-left: 0;
-  margin-top: 0;
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+.comment-button {
+  float: right;
+  background: white;
+  color: grey;
+  margin-top: 0.25rem;
+  border: none;
+  padding: 0.5rem;
 }
 
 .row {
@@ -305,8 +310,6 @@ a:first-child {
 
 .column {
   float: left;
-  padding: 0;
-  margin: 0;
   align-items: left;
 }
 
@@ -320,7 +323,7 @@ a:first-child {
 }
 
 @media screen and (max-width: 600px) {
-  .left, .right, .row {
+  .column, .row {
     width: 100%;
   }
   .right {
@@ -358,8 +361,8 @@ a:first-child {
 
 @media only screen and (max-width: 600px) {
   .close {
-    top: 4rem;
-    right: 5rem;
+    top: 5rem;
+    right: 4rem;
   }
 }
 

@@ -73,4 +73,4 @@ const ConnectedVideoInfo = (props) => (
   </AuthConsumer>
 )
 
-export default ConnectedVideoInfo;
+export default ConnectedVideoInfo

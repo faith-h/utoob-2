@@ -58,9 +58,8 @@ class CommentForm extends React.Component {
                   onChange={this.handleChange}
                 />
                 <button
-                  class='button'
+                  class='comment-button'
                   type='submit'
-                  style={{ float: 'right', background: 'white', color: 'grey', marginTop: '0.25rem' }}
                 >
                   <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
@@ -79,9 +78,8 @@ class CommentForm extends React.Component {
                   onChange={this.handleChange}
                 />
                 <button
-                  class='button'
+                  class='comment-button'
                   onClick={() => this.props.history.push("/login")}
-                  style={{ float: 'right', background: 'white', color: 'grey', marginTop: '0.25rem' }}
                 >
                   <FontAwesomeIcon icon={faPaperPlane} />
                 </button>

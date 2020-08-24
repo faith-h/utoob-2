@@ -39,7 +39,6 @@ class UserForm extends React.Component {
             <input
               class='login-input'
               required
-              autoFocus
               type='text'
               name='name'
               value={name}
